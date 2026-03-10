@@ -89,6 +89,7 @@ Built by **Vasavya Yagati** at **Spoorthy Innovations**.
 
 - **Name**: Vasavya Yagati  
 - **Email**: [vasavya@yagati.com](mailto:vasavya@yagati.com)  
+- **Company Email**: [info@spoorthy.org](mailto:info@spoorthy.org)  
 - **Website**: [http://spoorthy.org](http://spoorthy.org)  
 
 This is the **first free product** from **Spoorthy Innovations and Research Foundation** (`spoorthy.org`).
