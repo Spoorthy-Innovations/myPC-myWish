@@ -12,7 +12,7 @@ myPC myRight is a Chrome extension that **forces paste and copy**, unlocks **tex
 
 Technically, myPC myRight injects a content script that runs at `document_start` and registers its own listeners in the **capture phase**, calling `stopImmediatePropagation()` to prevent the page from blocking normal browser behavior, without calling `preventDefault()` so the default copy/paste/select actions still occur.
 
-## Install in Chrome (Free)
+## Install in Chrome (Public)
 
 1. Open Chrome and go to `chrome://extensions/`.
 2. Turn on **Developer mode** (top right).
@@ -30,7 +30,7 @@ The **Pro version** lives under `src/pro` and ships as a separate extension call
 4. Select the `src/pro` folder (the one containing `manifest.json` for Pro).
 5. You will see a second extension in the toolbar named **“myPC myRight Pro”** with a gold **Pro** badge in the popup.
 
-## Usage (Free)
+## Usage (Public)
 
 - On any tab, use **Ctrl+V** (Windows/Linux) or **Cmd+V** (Mac) to paste, and **Ctrl+C** / **Cmd+C** to copy, even on sites that normally block it.
 - Click the extension icon to open the popup.
@@ -105,7 +105,7 @@ See **STORE_SUBMISSION.md** for the complete Chrome Web Store submission checkli
 
 ## Files & credits
 
-- **manifest.json** – Core (free) extension config (Manifest V3).
+- **manifest.json** – Core (public) extension config (Manifest V3).
 - **content.js** – Core content script injected on all pages; allows paste/copy/cut/selection/right‑click/password visibility.
 - **popup.html** – Core popup shown when you click the extension icon.
 - **icons/generate.html** – Open in browser to generate and download extension icons.
