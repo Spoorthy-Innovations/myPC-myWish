@@ -31,9 +31,11 @@ function applySelectionStyle(enabled) {
       'input, textarea { -webkit-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important; }';
     fpasteSelectionStyleEl = style;
   }
-  if (!fpasteSelectionStyleEl.parentNode || !document.contains(fpasteSelectionStyleEl)) {
-    var target = document.head || document.documentElement;
-    if (target) {
+  var target = document.head || document.documentElement;
+  if (target) {
+    // If it's not the very last child, append it again to move it to the end.
+    // This ensures our !important rules override any newly injected !important rules.
+    if (target.lastElementChild !== fpasteSelectionStyleEl) {
       target.appendChild(fpasteSelectionStyleEl);
     }
   }
@@ -148,27 +150,6 @@ window.addEventListener('load', function () {
     
     // Setup a MutationObserver as a last resort against highly aggressive sites
     setupMutationObserver();
-
-    // The manual toggle OFF -> ON works because it runs entirely after the page's scripts 
-    // have established their blockers. Let's explicitly simulate that toggle 2 seconds 
-    // and 4 seconds after window.load.
-    setTimeout(function() {
-      if (fpasteOptions.selection) {
-        setFpasteEnabled(false);
-        setTimeout(function() {
-          setFpasteEnabled(true);
-        }, 100);
-      }
-    }, 2000);
-    
-    setTimeout(function() {
-      if (fpasteOptions.selection) {
-        setFpasteEnabled(false);
-        setTimeout(function() {
-          setFpasteEnabled(true);
-        }, 100);
-      }
-    }, 4500);
   }
 });
 
@@ -179,8 +160,12 @@ function setupMutationObserver() {
     for (var i = 0; i < mutations.length; i++) {
         var mutation = mutations[i];
         if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-            needsRelax = true;
-            break;
+            for (var j = 0; j < mutation.addedNodes.length; j++) {
+                if (mutation.addedNodes[j] !== fpasteSelectionStyleEl) {
+                    needsRelax = true;
+                    break;
+                }
+            }
         } else if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
            needsRelax = true;
            break;
