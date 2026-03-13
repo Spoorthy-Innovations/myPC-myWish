@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "myPC myWish",
+  "name": "myPC myRight",
   "version": "1.0.0",
-  "description": "myPC myWish lets you force copy, paste, selection, right-click and password visibility on websites that try to block them.",
+  "description": "myPC myRight lets you force copy, paste, selection, right-click and password visibility on websites that try to block them.",
   "permissions": [
     "activeTab",
     "storage"
@@ -22,7 +22,7 @@
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     },
-    "default_title": "myPC myWish - Take control of copy & paste"
+    "default_title": "myPC myRight - Take control of copy & paste"
   },
   "icons": {
     "16": "icons/icon16.png",

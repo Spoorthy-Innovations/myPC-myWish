@@ -1,6 +1,6 @@
 # Chrome Web Store – Submission Checklist
 
-Use this checklist before submitting **myPC myWish** to the Chrome Web Store.
+Use this checklist before submitting **myPC myRight** to the Chrome Web Store.
 
 ---
 
@@ -63,7 +63,7 @@ After uploading the ZIP, fill in:
 ### Images (required)
 
 - [ ] **Screenshot**: at least **1** image, **1280×800** or **640×400** px, showing the extension in use (e.g. popup or a site where copy/paste/selection/right-click were blocked and now work).
-- [ ] **Small promotional tile**: **440×280** px (required). Can be a simple graphic with the name “myPC myWish” and a short tagline.
+- [ ] **Small promotional tile**: **440×280** px (required). Can be a simple graphic with the name “myPC myRight” and a short tagline.
 
 ---
 
@@ -73,7 +73,7 @@ After uploading the ZIP, fill in:
   **“Allows users to force copy, paste, text selection, right click, and temporary password visibility on webpages that try to block them.”**
 - [ ] **Data usage**: Declare that the extension **does not collect, store, or transmit any user data** (it only runs locally to allow copy/paste/selection/right click/password visibility).
 - [ ] **Privacy policy**: If the store asks for a URL, use a page that states:  
-  **“myPC myWish does not collect, store, or share any personal or usage data. All processing is done locally in the browser.”**  
+  **“myPC myRight does not collect, store, or share any personal or usage data. All processing is done locally in the browser.”**  
   You can host this on GitHub Pages, your company site, or a simple static page.
 
 ---

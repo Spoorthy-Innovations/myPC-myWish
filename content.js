@@ -84,17 +84,17 @@ function applyOptions(opts) {
   }
 }
 
-// Load current setting (default: true)
+// Load current setting (default: all features ON)
+// Start with everything enabled immediately, then override from storage if needed.
+setFpasteEnabled(true);
 if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.sync) {
   chrome.storage.sync.get({ fpasteOptions: null, fpasteEnabled: true }, function (data) {
-    if (data.fpasteOptions) {
+    if (data && data.fpasteOptions) {
       applyOptions(data.fpasteOptions);
-    } else {
+    } else if (data && typeof data.fpasteEnabled !== 'undefined') {
       setFpasteEnabled(data.fpasteEnabled);
     }
   });
-} else {
-  applySelectionStyle(true);
 }
 
 // Once DOM is ready, clean up inline blockers for selection/right-click
@@ -139,6 +139,9 @@ document.addEventListener(
   'selectstart',
   function (e) {
     if (!fpasteOptions.selection) return true;
+    // On first real selection attempt, aggressively relax DOM again
+    // in case the page changed after initial load.
+    relaxDOMForSelectionAndContext();
     // Let selection proceed; just prevent page's own selectstart handlers
     e.stopImmediatePropagation();
     return true;

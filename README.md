@@ -1,6 +1,6 @@
-# myPC myWish
+# myPC myRight
 
-myPC myWish is a Chrome extension that **forces paste and copy**, unlocks **text selection**, **right click**, and can **temporarily show password fields on hover/focus**, even on websites that try to block them.
+myPC myRight is a Chrome extension that **forces paste and copy**, unlocks **text selection**, **right click**, and can **temporarily show password fields on hover/focus**, even on websites that try to block them.
 
 ## Features
 
@@ -10,15 +10,15 @@ myPC myWish is a Chrome extension that **forces paste and copy**, unlocks **text
 - **Right click**: re‑enables the browser context menu when sites try to disable it.
 - **Show password on hover/focus**: when enabled, password fields temporarily show as plain text while you hover or edit, then hide again when you move away or blur.
 
-Technically, myPC myWish injects a content script that runs at `document_start` and registers its own listeners in the **capture phase**, calling `stopImmediatePropagation()` to prevent the page from blocking normal browser behavior, without calling `preventDefault()` so the default copy/paste/select actions still occur.
+Technically, myPC myRight injects a content script that runs at `document_start` and registers its own listeners in the **capture phase**, calling `stopImmediatePropagation()` to prevent the page from blocking normal browser behavior, without calling `preventDefault()` so the default copy/paste/select actions still occur.
 
 ## Install in Chrome
 
 1. Open Chrome and go to `chrome://extensions/`.
 2. Turn on **Developer mode** (top right).
 3. Click **Load unpacked**.
-4. Select this folder: `myPC-myWish` (the one containing `manifest.json`).
-5. The extension will appear in your toolbar. You can pin it to see “myPC myWish by Spoorthy”.
+4. Select this folder: `myPC-myRight` (the one containing `manifest.json`).
+5. The extension will appear in your toolbar. You can pin it to see “myPC myRight by Spoorthy”.
 
 ## Usage
 
@@ -67,10 +67,10 @@ See **STORE_SUBMISSION.md** for the complete Chrome Web Store submission checkli
 ## Privacy statement
 
 - **Single purpose**  
-  myPC myWIsh *“allows users to force copy, paste, text selection, right click, and temporary password visibility on webpages that try to block them.”*
+  myPC myRight *“allows users to force copy, paste, text selection, right click, and temporary password visibility on webpages that try to block them.”*
 
 - **No data collection**  
-  myPC myWIsh *“does not collect, store, or transmit any personal or usage data. All processing happens locally in the browser.”*
+  myPC myRight *“does not collect, store, or transmit any personal or usage data. All processing happens locally in the browser.”*
 
 - **Password behavior**  
   When the password feature is enabled, it can **temporarily show password fields on hover/focus** so the user can see what they typed. Passwords are never sent anywhere; this behavior is intentional, user‑visible, and fully controlled by the user via the popup toggle.
