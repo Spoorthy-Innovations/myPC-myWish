@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "myPC myRight Pro",
   "version": "1.0.1",
-  "description": "myPC myRight Pro lets you force copy, paste, selection, right-click, password visibility, and more advanced features.",
+  "description": "Force copy, paste, selection, right-click, and unlock DevTools, print, scroll, video controls, overlays & more on any site.",
   "permissions": [
     "activeTab",
     "storage"
