@@ -10,6 +10,7 @@ function readOptionsFromUI() {
     selection: document.getElementById('toggleSelection')?.classList.contains('on'),
     rightClick: document.getElementById('toggleRightClick')?.classList.contains('on'),
     showPwd: document.getElementById('togglePwd')?.classList.contains('on'),
+    strongSelection: document.getElementById('toggleStrongSelection')?.classList.contains('on'),
   };
 }
 
@@ -19,6 +20,7 @@ function applyOptionsToUI(opts) {
   setToggle(document.getElementById('toggleSelection'), opts.selection);
   setToggle(document.getElementById('toggleRightClick'), opts.rightClick);
   setToggle(document.getElementById('togglePwd'), opts.showPwd);
+   setToggle(document.getElementById('toggleStrongSelection'), opts.strongSelection);
 }
 
 function saveAndSendOptions(opts) {
@@ -63,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
     selection: true,
     rightClick: true,
     showPwd: true,
+    strongSelection: false,
   };
 
   if (!chrome || !chrome.storage) {
@@ -80,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
         selection: en,
         rightClick: en,
         showPwd: en,
+        strongSelection: false,
       };
     } else {
       opts = Object.assign({}, defaultOptions, opts);
@@ -105,5 +109,6 @@ document.addEventListener('DOMContentLoaded', function () {
   attachToggle('toggleSelection');
   attachToggle('toggleRightClick');
   attachToggle('togglePwd');
+  attachToggle('toggleStrongSelection');
 });
 
